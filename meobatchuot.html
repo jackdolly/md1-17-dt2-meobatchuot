@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mèo bắt và ăn chuột</title>
+</head>
+<body>
+<script>
+    class Animal {
+        name;
+        speed;
+        say;
+        weight;
+        constructor(name, speed, say, weight) {
+            this.name = name;
+            this.speed = speed;
+            this.say = say;
+            this.weight = weight;
+        }
+        getName() {
+            return this.name;
+        }
+        setName(name) {
+            this.name = name;
+        }
+        getSpeed() {
+            return this.speed;
+        }
+        setSpeed(speed) {
+            this.speed = speed;
+        }
+        getSay() {
+            return this.say;
+        }
+        setSay(say) {
+            this.say = say;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+    class Rat extends Animal {
+        isLive
+        constructor(name,speed,say,weight,isLive,) {
+            super(name,speed,say,weight,isLive);
+            this.isLive = isLive
+        }
+        getIsLive() {
+            if (this.isLive) {
+                console.log("chuột chết")
+            } else {
+                console.log("anh đố e bắt được anh")
+            }
+            return this.isLive
+        }
+        setIsLive(isLive) {
+            this.isLive = isLive
+        }
+    }
+    class Cat extends Animal {
+        constructor(name,speed,say,weight) {
+            super(name,speed,say,weight);
+        }
+        catchRat(rat) {
+            if (rat.getSpeed() < this.getSpeed()) {
+                rat.setIsLive(true)
+                console.log("tau bắt được mày")
+            } else {
+                console.log("nó chạy nhanh vãi")
+            }
+        }
+        eatRat(rat){
+            if (rat.getIsLive()){
+                this.setWeight(this.getWeight() + rat.getWeight())
+            }
+        }
+    }
+    rat1 = new Rat("jerry1", 5, "chít", 10,false)
+    rat2 = new Rat("chuot", 10, "chít", 15,false)
+    cat = new Cat("Tom", 7, "meow", 20)
+
+</script>
+</body>
+</html>
